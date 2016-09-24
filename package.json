@@ -1,22 +1,31 @@
 {
   "name": "react-playground",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "author": "",
   "license": "",
   "private": true,
   "scripts": {
-    "pug": "pug src --out app --watch --pretty",
-    "tsc": "tsc"
+    "gulp": "./node_modules/.bin/gulp",
+    "pug": "./node_modules/.bin/pug src --out dist --watch --pretty",
+    "tsc": "./node_modules/.bin/tsc --project tsconfig.json"
   },
   "dependencies": {
     "@types/lodash": "^4.14.36",
-    "@types/node": "^6.0.41",
     "@types/react": "^0.14.37",
     "@types/react-dom": "^0.14.17",
     "lodash": "^4.16.1",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "@types/gulp": "^3.8.32",
+    "@types/node": "^6.0.41",
+    "gulp": "^3.9.1",
+    "gulp-pug": "^3.0.4",
+    "gulp-typescript": "^3.0.0",
+    "pug": "^2.0.0-beta6",
+    "pug-cli": "^1.0.0-alpha6",
     "typescript": "^2.0.3"
   }
 }
