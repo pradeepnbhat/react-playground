@@ -1,11 +1,9 @@
 declare let mountNode: any
 
-interface HelloWorldProps {
-  name: string
+class HelloMessage extends React.Component<any, any> {
+  render() {
+    return <div>Hello {this.props.name}</div>
+  }
 }
-
-let HelloMessage = React.createClass<HelloWorldProps, any>({
-  render: () => <div>Hello {this.props.name}</div>
-})
 
 ReactDOM.render(<HelloMessage name="John" />, mountNode)
