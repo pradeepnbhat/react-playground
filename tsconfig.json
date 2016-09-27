@@ -2,10 +2,13 @@
   "compilerOptions": {
     "target": "es6",
     "module": "es6",
-    "sourceMap": false,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "sourceMap": true,
     "watch": true,
     "outDir": "dist",
-    "jsx": "react"
+    "baseUrl": "src"
   },
   "exclude": [
     "node_modules"
