@@ -32,7 +32,7 @@ class Counter extends React.Component<CounterProps, CounterState>
 
     public shouldComponentUpdate(nextProps: CounterProps, nextState: CounterState){
       console.log("shouldComponentUpdate called");
-      return (this.state.current !== nextState.current || this.state.command !== nextState.command);
+      return false;
     }
 
     public componentWillUpdate(){
@@ -58,8 +58,6 @@ class Counter extends React.Component<CounterProps, CounterState>
 
       // Partial updates. 
       this.setState((prevState: CounterState, props: CounterProps) => {
-
-
         if (prevState.command === "Start"){
           this._timerId = window.setInterval(this._handleTick, 1000);  
           return {
@@ -72,17 +70,16 @@ class Counter extends React.Component<CounterProps, CounterState>
               command: "Start"
           } as CounterState;
         }
-      })
+      });
     }
 
     // Notice the delegate.
     private _handleTick = () => {
-
-      // What is the error in this code?
-      // How to correct it?
-      this.setState({
-         current: this.state.current + 1
-      } as CounterState);
+      this.setState((prevState: CounterState, props: CounterProps) => {
+        return {
+          current: prevState.current + 1
+        } as CounterState;
+      });
     }
 
     private _timerId: number;
